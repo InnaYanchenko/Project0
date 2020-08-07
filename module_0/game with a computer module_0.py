@@ -14,8 +14,8 @@ def game_core_binsearch(number):
     for i in range(1,101):
         list.append(i)
     low=0
-    high=len(list)-1
-    mid=len(list)//2
+    high=len(list)-1  #Define left(low) ahd right(high) edges of our list
+    mid=len(list)//2  #then define middle (mid)
     count = 1
     while list[mid] != number and low<=high:
         count+=1
@@ -40,32 +40,6 @@ def score_game(game_core):
     return(score)
 
 score_game(game_core_binsearch)
-
-
-# In[4]:
-
-
-import numpy as np                          
-number = np.random.randint(1,101)
-print ("Загадано число от 1 до 100")
-list=[]
-for i in range(1,101):
-    list.append(i)
-low=0
-high=len(list)-1
-mid=len(list)//2
-count = 1
-print(count, list[mid])
-while list[mid] != number and low<=high:
-    count+=1
-    if number > list[mid]: 
-        low=mid+1
-    else:
-         high=mid-1
-    mid=(low+high)//2
-    print(count, list[mid])
-else:
-    print("Загаданное число угадано за", count, "попыток")
 
 
 # In[ ]:
